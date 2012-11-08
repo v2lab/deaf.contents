@@ -1,0 +1,20 @@
+<div class="event-thumbnail2"
+     i18n:domain="deaf.contents">
+  <figure>
+    <a href="#" title="#"
+       tal:attributes="href view/url;
+                       title view/photo/caption">
+       <img src="#" alt="#" class="lead-image"
+         tal:attributes="src view/photo/url;
+                         alt view/photo/caption" />
+       <img src="++resource++deaf.theme.images/Portrait_GridFrame.png"
+            class="thumbnail-watermark" />
+    </a>
+  </figure>
+  <h4>
+    <a href="#" title="#"
+       tal:attributes="href view/url;
+                       title view/title"
+       tal:content="view/title">Title</a>
+  </h4>
+</div>

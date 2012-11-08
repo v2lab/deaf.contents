@@ -1,0 +1,12 @@
+<div class="#"
+     tal:attributes="class python: 'event-thumbnail' + (view.passed and ' has-been' or '')"
+     i18n:domain="deaf.contents">
+  <h4>
+    <a href="#"
+       tal:attributes="href view/url"
+       tal:content="view/title">Title</a>
+  </h4>
+  <span class="category"
+        tal:condition="view/category"
+        tal:content="view/category"></span>
+</div>

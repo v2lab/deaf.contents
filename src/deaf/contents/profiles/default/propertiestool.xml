@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<object name="portal_properties" meta_type="Plone Properties Tool">
+ <object name="imaging_properties">
+  <property name="allowed_sizes">
+   <element value="large 768:768" />
+   <element value="preview 460:460" />
+   <element value="panorama 320:160" />
+   <element value="mini 160:160" />
+   <element value="thumb 128:128" />
+   <element value="tile 64:64" />
+  </property>
+ </object>
+ <object name="site_properties" meta_type="Plone Property Sheet">
+  <property name="allowRolesToAddKeywords" type="lines"/>
+ </object>
+ <object name="cli_properties" meta_type="Plone Property Sheet">
+  <property name="title">Content Lead Image Properties</property>
+  <property name="allowed_types" type="lines">
+   <element value="Event"/>
+   <element value="GeoLocation"/>
+   <element value="Document"/>
+   <element value="Person"/>
+  </property>
+  <property name="desc_scale_name" type="string">preview</property>
+  <property name="body_scale_name" type="string">preview</property>
+ </object>
+</object>

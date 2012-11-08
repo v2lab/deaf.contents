@@ -1,0 +1,18 @@
+<tal:actions i18n:domain="deaf.contents">
+  <div class="next-previous-links">
+    <a href="#" class="prev"
+       tal:condition="viewletmanager/previous"
+       tal:attributes="href viewletmanager/previous/url">
+      <span i18n:translate="">Prev.</span>
+    </a>
+    <a href="#" class="next"
+       tal:condition="viewletmanager/next"
+       tal:attributes="href viewletmanager/next/url">
+      <span i18n:translate="">Next</span>
+    </a>
+  </div>
+  <div class="extra-actions">
+    <tal:actions tal:repeat="viewlet viewletmanager/viewlets"
+                 tal:content="structure viewlet/render" />
+  </div>
+</tal:actions>

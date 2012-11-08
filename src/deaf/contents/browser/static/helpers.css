@@ -1,0 +1,70 @@
+.homepage-slideshow {
+   width: 344px;
+   margin-top: -25px;
+}
+
+.homepage-slideshow .slideshow {
+   position: relative;
+   overflow: hidden;
+   height: 500px;
+   margin-left: -10px;
+}
+
+.homepage-slideshow .image {
+   display: none;
+}
+.homepage-slideshow .image img {
+   top: 0;
+   left: 0;
+   position: absolute;
+}
+
+.homepage-slideshow .navigation {
+   margin-left: 15px;
+}
+
+.homepage-slideshow .control {
+   height: 1.4em;
+   width: 1.4em;
+   float: left;
+   background-color: #ccc;
+   margin: 0.2em;
+   cursor: pointer;
+   webkit-border-radius: 3px;
+   moz-border-radius: 3px;
+   border-radius: 3px;
+}
+
+.homepage-slideshow .control.current:before {
+   content: ' ';
+   display: block;
+   height: 0.6em;
+   width: 0.6em;
+   margin: 0.4em;
+   background-color: #555;
+   webkit-border-radius: 3px;
+   moz-border-radius: 3px;
+   border-radius: 3px;
+}
+
+/* Popup on slideshow */
+.homepage-slideshow .overlay {
+	display: none;
+	z-index: 10000;
+	background-color: #333;
+	border: 1px solid #666;
+	box-shadow: 0 0 30px 5px #000;
+	-moz-box-shadow: 0 0 30px 5px #000;
+	-webkit-box-shadow: 0 0 30px #000;
+}
+
+.homepage-slideshow .overlay .close,
+#ticket-frame .close {
+	background-image: url("++resource++deaf.contents/close.png");
+	position: absolute;
+	right: -15px;
+	top: -15px;
+	cursor: pointer;
+	height: 35px;
+	width: 35px;
+}

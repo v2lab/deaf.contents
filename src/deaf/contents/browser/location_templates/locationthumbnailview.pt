@@ -1,0 +1,28 @@
+<div class="medium-thumbnail"
+     i18n:domain="deaf.contents">
+
+  <div class="location-description">
+  <h4>
+    <a name="#"
+       tal:attributes="name context/UID"
+       tal:content="view/title">Title</a>
+  </h4>
+  <p class="description"
+     tal:content="context/Description">
+  </p>
+  <p><a href="#"
+        tal:attributes="href view/url"
+        i18n:translate="">Read more</a></p>
+  </div>
+  <div class="location-image">
+  <figure>
+    <img src="#" alt="#"
+         tal:attributes="src view/image/url;
+                         alt view/title" />
+    <figcaption tal:condition="view/image/caption"
+                tal:content="view/image/caption">Caption</figcaption>
+  </figure>
+  </div>
+
+</div>
+

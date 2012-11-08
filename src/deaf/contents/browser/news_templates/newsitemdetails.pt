@@ -1,0 +1,13 @@
+<div class="news-item-details"
+     i18n:domain="deaf.contents">
+  <span class="category" i18n:translate=""
+        tal:condition="viewlet/category">
+    Category:<br /><span i18n:name="category" tal:content="viewlet/category">
+  category</span>
+  </span>
+  <span class="posted" i18n:translate=""
+        tal:condition="viewlet/date">
+    <br />/<br />Posted on:<br /><span i18n:name="date" tal:replace="viewlet/date" />
+  </span>
+</div>
+<br />

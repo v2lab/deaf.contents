@@ -1,0 +1,8 @@
+<div class="person-details"
+     i18n:domain="">
+  <span class="category" i18n:translate=""
+        tal:condition="viewlet/description">
+    <span tal:content="viewlet/description">Person Description</span>
+    <br /><br />
+  </span>
+</div>

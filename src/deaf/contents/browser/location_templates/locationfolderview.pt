@@ -1,0 +1,40 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="deaf.contents">
+  <body>
+    <div metal:fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+
+        <h2 class="gray" tal:content="context/Title">Title</h2>
+
+        <div class="locations-index"
+             tal:condition="view/index"
+             tal:content="structure view/index">
+        </div>
+
+        <div class="googleMapView">
+          <dl>
+            <tal:markers tal:repeat="map view/maps">
+              <dt class="title">
+                <img tal:replace="structure map/icon" />
+                <a href=""
+                   tal:attributes="href string:#${map/name}"
+                   tal:content="map/marker/title">Title</a>
+              </dt>
+              <dd class="geo">
+                <span class="latitude" tal:content="map/marker/latitude" />
+                <span class="longitude" tal:content="map/marker/longitude" />
+              </dd>
+            </tal:markers>
+          </dl>
+        </div>
+
+        <tal:locations tal:repeat="location view/locations">
+            <tal:location tal:replace="structure location/@@thumbnail_view" />
+        </tal:locations>
+
+      </tal:main-macro>
+    </div>
+  </body>
+</html>

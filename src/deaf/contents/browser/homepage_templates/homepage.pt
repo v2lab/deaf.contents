@@ -1,0 +1,55 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="deaf.contents">
+  <body>
+    <div metal:fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+        <div class="homepage-column one">
+          <div class="homepage-slideshow">
+            <div class="slideshow">
+              <div class="image"
+                   tal:repeat="image view/slideshow">
+                <img src="#" alt="#"
+                     tal:attributes="src string:${image/getURL};
+                                     alt image/Title" />
+                <img src="#" alt="#" class="carousel-mask"
+                     tal:define="id python:'%02d' % (repeat['image'].number() % 6)"
+                     tal:attributes="src string:${portal_url}/++resource++deaf.contents/carousel_${id}.png;
+                                     alt image/Title" />
+                <img src="#" alt="#" class="carousel-hover-mask"
+                      tal:attributes="src string:${portal_url}/++resource++deaf.contents/carousel_empty_overlay.png;" />
+              </div>
+            </div>
+            <div class="navigation">
+              <div class="control"
+                   tal:repeat="image view/slideshow">
+                &nbsp;
+              </div>
+            </div>
+          </div>
+          <div class="homepage-about"
+               tal:define="index nocall:context/index | nothing"
+               tal:condition="nocall:index"
+               tal:content="structure index/getText">
+            About (index)
+          </div>
+        </div>
+        <div class="homepage-column two">
+          <div class="homepage-info"
+               tal:define="info nocall:context/info | nothing"
+               tal:condition="nocall:info"
+               tal:content="structure info/getText">
+            Info (info)
+          </div>
+          <div class="homepage-news">
+            <h2>News</h2>
+            <tal:items tal:repeat="item view/news">
+              <tal:item tal:replace="structure item/@@mini_thumbnail_view" />
+            </tal:items>
+          </div>
+        </div>
+      </tal:main-macro>
+    </div>
+  </body>
+</html>

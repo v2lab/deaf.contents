@@ -1,0 +1,45 @@
+<configure
+   xmlns="http://namespaces.zope.org/zope"
+   xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+   xmlns:grok="http://namespaces.zope.org/grok"
+   xmlns:browser="http://namespaces.zope.org/browser"
+   xmlns:zcml="http://namespaces.zope.org/zcml"
+   i18n_domain="deaf.contents">
+
+  <include package="five.grok" />
+  <include package="zeam.utils.batch" />
+  <include package="Products.Person" />
+  <include package="Products.Maps" />
+  <!-- <include package="archetypes.clippingimage" file="patch.zcml" /> -->
+  <!-- <include package="archetypes.clippingimage" file="blob.zcml" /> -->
+  <include package="archetypes.schemaextender" />
+  <include package="collective.contentleadimage" />
+
+  <adapter factory=".events.EventExtender"
+           provides="archetypes.schemaextender.interfaces.ISchemaExtender"
+           name="deaf.contents" />
+
+  <grok:grok package="." />
+
+  <!-- Register the installation GenericSetup extension profile -->
+  <genericsetup:registerProfile
+      name="default"
+      title="DEAF"
+      directory="profiles/default"
+      description="Content types and templates for DEAF"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <!-- For permissions -->
+  <include package="Products.CMFCore" />
+
+  <!-- Buyable Content form registration  -->
+  <browser:page
+     for="*"
+     name="buyable_content"
+     class=".buyable_content.EditBuyableInformation"
+     permission="cmf.ModifyPortalContent"
+     />
+
+
+</configure>

@@ -1,0 +1,25 @@
+<div class="#"
+     tal:attributes="class python: 'event-details' + (viewlet.passed and ' has-been' or '')"
+     i18n:domain="">
+  <span class="category" i18n:translate=""
+        tal:condition="viewlet/category">
+    Event:<br /><span i18n:name="category" tal:replace="viewlet/category" />
+    <br /><br />
+  </span>
+  <tal:date tal:repeat="date viewlet/dates">
+    <span class="date" i18n:translate="">
+      <span class="title">Date</span><br /><span i18n:name="date" tal:replace="date/day" />
+      <br />
+    </span>
+    <span class="time" i18n:translate="">
+      <span i18n:name="start" tal:replace="date/start" /> -
+      <span i18n:name="end" tal:replace="date/end" />
+      <br /><br />
+    </span>
+  </tal:date>
+  <span class="location" i18n:translate=""
+        tal:condition="viewlet/location">
+     <span class="title">Location</span><br /><span i18n:name="date" tal:replace="viewlet/location" />
+  </span>
+</div>
+<br />

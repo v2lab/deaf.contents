@@ -1,0 +1,52 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="deaf.contents">
+  <body>
+    <metal:main metal:fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+        <div class=""
+             tal:attributes="class string:${view/css_class}-container page-container">
+          <div class="#"
+               tal:attributes="class string:${view/css_class}-actions page-actions"
+               tal:content="structure provider:deaf.actions">
+          </div>
+          <div class="#"
+               tal:attributes="class string:${view/css_class}-content page-content">
+            <h2 tal:content="view/title">Document</h2>
+            <p class="#"
+               tal:attributes="class string:${view/css_class}-description page-description"
+               tal:content="view/description" />
+            <p tal:replace="structure context/getText" />
+
+            <tal:extra tal:content="structure provider:deaf.document.extra" />
+
+          </div>
+          <br clear="all" />
+        </div>
+        <div class="#"
+             tal:attributes="class string:${view/css_class}-related page-related page-tabs"
+             tal:condition="view/related">
+          <h2 i18n:translate="">Related</h2>
+          <tal:category tal:repeat="category view/related">
+            <dl>
+              <dt tal:content="category/title">
+              </dt>
+              <dd>
+                <ul>
+                  <li tal:repeat="content category/contents">
+                    <a href="#"
+                       tal:attributes="href content/absolute_url"
+                       tal:content="content/Title">
+                      Title
+                    </a>
+                  </li>
+                </ul>
+              </dd>
+            </dl>
+          </tal:category>
+        </div>
+      </tal:main-macro>
+    </metal:main>
+  </body>
+</html>

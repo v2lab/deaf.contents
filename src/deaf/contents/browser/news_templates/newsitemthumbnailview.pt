@@ -1,0 +1,21 @@
+<div class="medium-thumbnail"
+     i18n:domain="deaf.contents">
+  <span class="medium-thumbnail-heading">
+    <span class="category"
+          tal:condition="view/category"
+          tal:content="view/category"></span> /
+    <span class="posted"
+          tal:condition="view/date"
+          tal:content="view/date">Date</span>
+  </span>
+  <h4><span tal:content="view/title">Title</span></h4>
+  <p class="description"
+     tal:content="view/description">
+  </p>
+  <p class="news-item-more"><a href="#"
+        tal:attributes="href view/url"
+        i18n:translate="">Read more</a></p>
+  <img src="#" alt="#" class="news-item-image"
+       tal:condition="view/image_url"
+       tal:attributes="src view/image_url; alt view/title" />
+</div>

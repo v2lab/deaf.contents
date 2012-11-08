@@ -1,0 +1,22 @@
+<div class="ticket-link" i18n:domain="deaf.contents">
+ <a href="#" rel="#ticket-frame" target="_blank" id="ticket-trigger"
+    tal:attributes="href viewlet/url"
+    i18n:translate="">
+   Buy ticket
+ </a>
+ <div class="overlay" id="ticket-frame">
+   <div style="width:500px;">
+    <iframe name="ticketshop"
+            width="500" height="650" frameborder="0" allowtransparency="true">
+      <a href="#"
+         tal:attributes="href viewlet/url">
+        Uw browser ondersteunt geen iFrames!
+      </a>
+    </iframe>
+    <a style="font-size:11px; color: #7F7F7F; background-color:#FFFFFF;
+              font-family:'Arial'; font-weight:bold; margin:20px"
+       href="http://company.ticketscript.com/nl/?cid=8.1"
+       target="_blank">Secure tickets by ticketscript</a>
+   </div>
+  </div>
+</div>

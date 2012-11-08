@@ -1,0 +1,7 @@
+<figure>
+  <img src="#" alt="#"
+       tal:attributes="src viewlet/image/url;
+                       alt view/title" />
+  <figcaption tal:condition="viewlet/image/caption"
+              tal:content="viewlet/image/caption">Caption</figcaption>
+</figure>

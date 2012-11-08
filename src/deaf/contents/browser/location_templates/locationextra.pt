@@ -1,0 +1,28 @@
+<div class="googleMapView"
+     tal:define="markers context/@@maps_googlemaps_view">
+  <dl>
+    <tal:markers tal:repeat="marker markers/getMarkers">
+      <dt class="title">
+        <img tal:replace="structure python:markers.iconTagForMarker(marker)" />
+        <a href=""
+           tal:attributes="href marker/url"
+           tal:content="marker/title">Title</a>
+      </dt>
+      <dd class="geo">
+        <span class="latitude" tal:content="marker/latitude" />
+        <span class="longitude" tal:content="marker/longitude" />
+      </dd>
+      <tal:block tal:condition="marker/related_items | nothing">
+        <dt i18n:translate="label_related_items">Related Items</dt>
+        <dd>
+          <tal:related tal:repeat="related marker/related_items">
+            <a href=""
+               tal:attributes="href related/url;
+                               title related/description | nothing"
+               tal:content="related/title" />
+          </tal:related>
+        </dd>
+      </tal:block>
+    </tal:markers>
+  </dl>
+</div>

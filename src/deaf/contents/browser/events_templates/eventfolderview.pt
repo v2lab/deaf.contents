@@ -1,0 +1,45 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="deaf.contents">
+  <body>
+    <div metal:fill-slot="main">
+      <tal:main-macro metal:define-macro="main">
+        <h2 tal:content="context/Title">Folder</h2>
+
+        <div class="events-index"
+             tal:condition="view/index"
+             tal:content="structure view/index">
+        </div>
+
+        <div class="events-filter page-tabs"
+             tal:condition="python:0">
+          <!-- This is disabled for the moment -->
+          <dl>
+            <dt i18n:translate="">
+              Categories
+            </dt>
+            <dd>
+              <ul>
+                <li tal:repeat="category view/categories">
+                  <a href="#"
+                     tal:attributes="href string:${view/url}?Subject=${category}"
+                     tal:content="category">
+                    Categories
+                  </a>
+                </li>
+              </ul>
+            </dd>
+          </dl>
+        </div>
+
+        <tal:items tal:repeat="item view/events">
+          <tal:item tal:replace="structure item/@@thumbnail_view" />
+        </tal:items>
+        <tal:noitems tal:condition="not: view/events">
+          There are no events matching your criterias.
+        </tal:noitems>
+      </tal:main-macro>
+    </div>
+  </body>
+</html>
