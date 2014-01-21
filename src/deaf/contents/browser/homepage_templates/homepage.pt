@@ -14,7 +14,7 @@
                      tal:attributes="src string:${image/getURL};
                                      alt image/Title" />
                 <img src="#" alt="#" class="carousel-mask"
-                     tal:define="id python:'%02d' % (repeat['image'].number() % 6)"
+                     tal:define="id python:'%02d' % ((repeat['image'].number() % 6) + 1)"
                      tal:attributes="src string:${portal_url}/++resource++deaf.contents/carousel_${id}.png;
                                      alt image/Title" />
                 <img src="#" alt="#" class="carousel-hover-mask"
