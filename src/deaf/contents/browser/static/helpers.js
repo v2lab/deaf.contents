@@ -3,16 +3,16 @@
     var SLIDESHOW_TIMEOUT = 5000;
 
     var Timer = function(callback) {
-        var timeout = null;
-        return {
+        var timeout = null,
+            api = {
             start: function() {
-                this.pause();
-                timeout = setTimeout(this.next, SLIDESHOW_TIMEOUT);
+                api.pause();
+                timeout = setTimeout(api.next, SLIDESHOW_TIMEOUT);
             },
             next: function() {
                 timeout = null;
                 callback();
-                this.start();
+                api.start();
             },
             pause: function() {
                 if (timeout !== null) {
@@ -22,6 +22,7 @@
             }
 
         };
+        return api;
     };
 
     var make_slideshow = function($container) {
