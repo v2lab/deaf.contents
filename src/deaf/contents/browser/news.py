@@ -13,7 +13,6 @@ from deaf.contents.browser.utils import get_category, format_date
 
 
 class NewsComposedFolderView(grok.View):
-    grok.context(IATFolder)
     grok.name('news_composed_folder_view')
 
     NEWS_COUNT = 5
