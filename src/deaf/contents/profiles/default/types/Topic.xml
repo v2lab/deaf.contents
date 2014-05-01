@@ -1,11 +1,12 @@
 <?xml version="1.0"?>
-<object name="Plone Site"
+<object name="Topic"
    meta_type="Factory-based Type Information with dynamic views"
    i18n:domain="plone" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
- <property name="immediate_view">homepage_view</property>
- <property name="default_view">homepage_view</property>
  <property name="view_methods" purge="False">
-  <element value="homepage_view" />
   <element value="news_composed_folder_view" />
+  <element value="person_folder_view" />
+  <element value="location_folder_view" />
+  <element value="event_folder_view" />
+  <element value="event_folder2_view" />
  </property>
 </object>
