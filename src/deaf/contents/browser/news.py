@@ -16,7 +16,7 @@ class NewsComposedFolderView(grok.View):
     grok.context(IATFolder)
     grok.name('news_composed_folder_view')
 
-    NEWS_COUNT = 5
+    NEWS_COUNT = 100
 
     def update(self):
         catalog = getToolByName(self.context, 'portal_catalog')
